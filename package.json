@@ -1,0 +1,31 @@
+{
+  "name":             "portreset",
+  "version":          "0.0.1",
+  "description":      "portreset",
+  "dependencies":     {
+    "nan":              "2.2.0",
+    "usb":              "1.1.1"
+  },
+  "repository":       {
+    "type":             "git",
+    "url":              "git://github.com/reqshark/portreset"
+  },
+  "keywords":         [
+    "native",
+    "binding",
+    "addon",
+    "usb"
+  ],
+  "author":           {
+    "name":             "Bent Cardan",
+    "email":            "bent@nothingsatisfies.com",
+    "url":              "http://req.link"
+  },
+  "config":           {
+                        "unsafe-perm": true
+  },
+  "contributors":     [
+    "Bent Cardan <bent@nothingsatisfies.com> (https://github.com/reqshark)"
+  ],
+  "license": "MIT"
+}
