@@ -1,6 +1,6 @@
 {
   "name":             "portreset",
-  "version":          "0.0.1",
+  "version":          "0.1.0",
   "description":      "portreset",
   "dependencies":     {
     "nan":              "2.2.0",
