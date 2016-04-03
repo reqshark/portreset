@@ -12,13 +12,18 @@ using Nan::To;
 #include <unistd.h>
 #include <fcntl.h>
 #include <errno.h>
-#include <sys/ioctl.h>
 
+#ifdef __linux__
+#include <sys/ioctl.h>
 #include <linux/usbdevice_fs.h>
+#endif
+
+
 
 NAN_METHOD(reset){
   String::Utf8Value str(info[0]);
 
+#ifdef __linux__
   int fd = open(*str, O_WRONLY);
   if (fd < 0) {
     perror("Error opening output file");
@@ -33,7 +38,7 @@ NAN_METHOD(reset){
 
   printf("Reset successful\n");
   close(fd);
-
+#endif
   return;
 }
 

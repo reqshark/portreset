@@ -1,6 +1,9 @@
 const devices   = require('usb').getDeviceList
 const reset     = require('./build/Release/portreset.node').reset
-module.exports  = (idVendor, idProduct) => {
+
+module.exports  = process.platform === 'darwin' ? noop : main
+
+function main (idVendor, idProduct) {
   pqFile(idVendor, idProduct, (f) => reset(f))
 }
 
@@ -12,3 +15,5 @@ function pqFile (idVendor, idProduct, fn) {
     }
   })
 }
+
+function noop(){}
